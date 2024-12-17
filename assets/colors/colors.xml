@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#EA5B29</color>
+
+    <!--  Solve AI Brand Colors (Light)  -->
+    <color name="secondary">#EFECE6</color>
+    <color name="tertiary">#F6F2EF</color>
+    <color name="quaternary">#F9F6EF</color>
+    <color name="backgroundLight">#F6F2EF</color>
+    <color name="backgroundSecondaryLight">#FFFFFF</color>
+
+    <!--  Solve AI Brand Colors (Dark)  -->
+    <color name="secondaryDark">#1A1816</color>
+    <color name="tertiaryDark">#191613</color>
+    <color name="quaternaryDark">#242220</color>
+    <color name="backgroundDark">#0E0D0C</color>
+    <color name="backgroundSecondaryDark">#1A1816</color>
+
+    <!--  Feature-Related Colors  -->
+    <color name="fDarkGreen">#228B22</color>
+    <color name="fLightBlue">#1E90FF</color>
+    <color name="fDeepTeal">#20B2AA</color>
+    <color name="fAmber">#FFA500</color>
+    <color name="fPurple">#8A2BE2</color>
+    <color name="fOrange">#FF7F50</color>
+    <color name="fLightGreen">#32CD32</color>
+    <color name="fRed">#FF6347</color>
+    <color name="fDeepBlue">#4169E1</color>
+    <color name="fLightTeal">#00CED1</color>
+</resources>
