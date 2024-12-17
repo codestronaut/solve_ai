@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "120470472850",
+    "project_id": "solve-ai-dev",
+    "storage_bucket": "solve-ai-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120470472850:android:67d80a042af9d6dae3fe4b",
+        "android_client_info": {
+          "package_name": "com.rainforestudio.solve_ai.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjK9WS2r8-mA1LvSiygO-KYi9GDrr2_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

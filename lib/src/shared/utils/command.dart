@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:solve_ai/utils/result.dart';
+import 'package:solve_ai/src/shared/utils/result.dart';
 
 typedef CommandAction0<T> = Future<Result<T>> Function();
 typedef CommandAction1<T, A> = Future<Result<T>> Function(A);
