@@ -33,6 +33,21 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Generated codes
+*.config.dart
+*.freezed.dart
+*.g.dart
+*.gr.dart
+
+# Ignore Firebase configuration files
+lib/firebase_options*.dart
+ios/Runner/GoogleService-Info.plist
+ios/flavors/*/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
+macos/flavors/*/GoogleService-Info.plist
+android/app/google-services.json
+android/app/src/*/google-services.json
+
 # Symbolication related
 app.*.symbols
 
@@ -46,12 +61,3 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
-
-# Ignore Firebase configuration files
-lib/firebase_options*.dart
-ios/Runner/GoogleService-Info.plist
-ios/flavors/*/GoogleService-Info.plist
-macos/Runner/GoogleService-Info.plist
-macos/flavors/*/GoogleService-Info.plist
-android/app/google-services.json
-android/app/src/*/google-services.json

@@ -1,0 +1,71 @@
+{
+  "@@locale": "en",
+
+  "appName": "Solve AI",
+
+  "@_ONBOARDING": {
+  },
+  "onboarding1Title": "Snap and Solve Math",
+  "onboarding1Subtitle": "Snap a math problem and get instant,\nstep-by-step solutions.",
+  "onboarding2Title": "Write Anything",
+  "onboarding2Subtitle": "Quickly draft essays, reports, or\nany written content with ease.",
+  "onboarding3Title": "Chat with AI",
+  "onboarding3Subtitle": "Ask questions and get instant\nanswers on any topic, anytime.",
+  "helloThere": "Hello There",
+  "continueWithGoogle": "Continue with Google",
+  "continueWithApple": "Continue with Apple",
+
+  "@_PERMISSION": {
+  },
+  "enablePermission": "Enable Permission",
+  "enablePermissionDescription": "To get started, we need access to:",
+  "camera": "Camera",
+  "cameraDescription": "Snap photos of your math problems to solve them instantly.",
+  "gallery": "Gallery",
+  "galleryDescription": "Upload homework pics from your gallery for analysis.",
+  "microphone": "Microphone",
+  "microphoneDescription": "Use voice commands to ask questions and get help.",
+  "allow": "Allow",
+
+  "@_BUTTON_LABELS": {
+  },
+  "getStarted": "Get Started",
+  "proceed": "Continue",
+
+  "@_MENU_LABELS": {
+  },
+  "navScan": "Scan",
+  "navTools": "Tools",
+  "navChat": "Chat AI",
+  "navHistory": "History",
+
+  "askAiTitle": "Ask AI",
+  "askAiSubtitle": "Get help with questions and summaries.",
+  "askAiAnything": "Ask Anything",
+  "askAiSummarize": "Summarize",
+
+  "writeTitle": "Write",
+  "writeSubtitle": "Improve your writing effortlessly.",
+  "writeDraftEssay": "Draft an Essay",
+  "writeImprove": "Improve",
+  "writeChangeTone": "Change Tone",
+  "writeParaphrase": "Paraphrase",
+
+  "languageTitle": "Language",
+  "languageSubtitle": "Easily translate and correct text",
+  "languageTranslate": "Translate",
+  "languageFixGrammar": "Fix Grammar",
+
+  "@_CHATS": {
+  },
+  "generalChatOpener": "What do you need help with today?",
+  "askSolveAi": "Ask Solve AI",
+  "askFollowUp": "Ask a Follow Up",
+
+  "@_MISC": {
+  },
+  "agreements": "By tapping on \"Get Started\", you agree to our",
+  "agreementsTerms": "Terms",
+  "agreementsPrivacyPolicy": "Privacy Policy",
+  "and": "and"
+}
