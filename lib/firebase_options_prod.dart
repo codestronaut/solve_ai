@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '638118022369',
     projectId: 'solve-ai-prod',
     storageBucket: 'solve-ai-prod.firebasestorage.app',
+    iosClientId: '638118022369-1k9ls7hj73hlgcij55tupc0cbr0jjo8k.apps.googleusercontent.com',
     iosBundleId: 'com.rainforestudio.solveAi',
   );
+
 }

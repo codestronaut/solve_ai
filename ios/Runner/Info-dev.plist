@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Solve AI</string>
+	<string>Solve AI (D)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -49,7 +49,7 @@
 	<false/>
 
     <key>GIDClientID</key>
-    <string>638118022369-1k9ls7hj73hlgcij55tupc0cbr0jjo8k.apps.googleusercontent.com</string>
+    <string>120470472850-sbcj2asgu0mr9te44t2ldfk6lrpknmvg.apps.googleusercontent.com</string>
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -57,7 +57,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.638118022369-1k9ls7hj73hlgcij55tupc0cbr0jjo8k</string>
+                <string>com.googleusercontent.apps.120470472850-sbcj2asgu0mr9te44t2ldfk6lrpknmvg</string>
             </array>
         </dict>
     </array>

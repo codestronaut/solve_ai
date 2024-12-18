@@ -6,6 +6,7 @@ import '../../../shared/extensions/ext_misc.dart';
 import '../../../shared/widgets/global_button.dart';
 import '../../../shared/widgets/global_indexed_stack.dart';
 import '../managers/onboarding_cubit.dart';
+import 'auth_button.dart';
 import 'onboarding_agreement_view.dart';
 
 class OnboardingFooterView extends StatelessWidget {
@@ -40,8 +41,7 @@ class OnboardingFooterView extends StatelessWidget {
                   /// because Apple sign in requires Apple Developer Program
                   /// enrollment.
 
-                  // return const AuthButton.google();
-                  return const SizedBox();
+                  return const AuthButton.google();
 
                   // return Platform.isIOS
                   //     ? const AuthButton.apple()

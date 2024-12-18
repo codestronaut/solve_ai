@@ -12,7 +12,12 @@
           "package_name": "com.rainforestudio.solve_ai"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "638118022369-2le49uhphiava6et1m865venmvf4ope2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyALKsqhdDkE83f240eHVTMdz6VzUXyZkJA"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638118022369-2le49uhphiava6et1m865venmvf4ope2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "638118022369-1k9ls7hj73hlgcij55tupc0cbr0jjo8k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rainforestudio.solveAi"
+              }
+            }
+          ]
         }
       }
     }
