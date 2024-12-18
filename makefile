@@ -11,3 +11,7 @@ get:
 generate:
 	echo "Generating needed codes.." ; \
 	fvm dart run build_runner build --delete-conflicting-outputs ; \
+
+l10n:
+	echo "Generating needed codes.." ; \
+	fvm flutter gen-l10n ; \

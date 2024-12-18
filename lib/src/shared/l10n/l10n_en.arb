@@ -56,6 +56,10 @@
   "languageTranslate": "Translate",
   "languageFixGrammar": "Fix Grammar",
 
+  "profile": "Profile",
+  "appearance": "Appearance",
+  "logout": "Logout",
+
   "@_CHATS": {
   },
   "generalChatOpener": "What do you need help with today?",
@@ -64,6 +68,13 @@
 
   "@_MISC": {
   },
+  "free": "Free",
+  "premium": "Premium",
+  "verified": "Verified",
+  "notVerified": "Not Verified",
+  "system": "System",
+  "lightMode": "Light Mode",
+  "darkMode": "Dark Mode",
   "agreements": "By tapping on \"Get Started\", you agree to our",
   "agreementsTerms": "Terms",
   "agreementsPrivacyPolicy": "Privacy Policy",

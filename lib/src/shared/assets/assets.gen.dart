@@ -15,6 +15,10 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic-appearance-colored.svg
+  SvgGenImage get icAppearanceColored =>
+      const SvgGenImage('assets/icons/ic-appearance-colored.svg');
+
   /// File path: assets/icons/ic-camera.svg
   SvgGenImage get icCamera => const SvgGenImage('assets/icons/ic-camera.svg');
 
@@ -67,6 +71,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic-history.svg
   SvgGenImage get icHistory => const SvgGenImage('assets/icons/ic-history.svg');
 
+  /// File path: assets/icons/ic-logout-colored.svg
+  SvgGenImage get icLogoutColored =>
+      const SvgGenImage('assets/icons/ic-logout-colored.svg');
+
   /// File path: assets/icons/ic-microphone.svg
   SvgGenImage get icMicrophone =>
       const SvgGenImage('assets/icons/ic-microphone.svg');
@@ -85,8 +93,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic-tools.svg
   SvgGenImage get icTools => const SvgGenImage('assets/icons/ic-tools.svg');
 
+  /// File path: assets/icons/ic-user.svg
+  SvgGenImage get icUser => const SvgGenImage('assets/icons/ic-user.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
+        icAppearanceColored,
         icCamera,
         icChatFilled,
         icChat,
@@ -101,11 +113,13 @@ class $AssetsIconsGen {
         icFeatTranslate,
         icGallery,
         icHistory,
+        icLogoutColored,
         icMicrophone,
         icScanFilled,
         icScan,
         icSettings,
-        icTools
+        icTools,
+        icUser
       ];
 }
 

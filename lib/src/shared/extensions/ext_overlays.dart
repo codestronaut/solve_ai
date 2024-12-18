@@ -6,11 +6,13 @@ import 'ext_theme.dart';
 extension OverlaysX on BuildContext {
   Future<T?> showSheet<T>({
     required Widget Function(BuildContext) builder,
+    Color? lightBackgroundColor,
+    Color? darkBackgroundColor,
     bool isScrollControlled = false,
     bool isDismissible = true,
   }) {
-    const lightBackground = ColorName.backgroundLight;
-    const darkBackground = ColorName.backgroundDark;
+    final lightBackground = lightBackgroundColor ?? ColorName.backgroundLight;
+    final darkBackground = darkBackgroundColor ?? ColorName.backgroundDark;
 
     return showModalBottomSheet<T>(
       context: this,

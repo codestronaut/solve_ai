@@ -47,17 +47,23 @@ class AuthRepositoryImpl implements AuthRepository {
     } on Exception catch (e) {
       _log.warning(e.toString());
       return Result.error(e);
-    } catch (e) {
-      print(e.toString());
-      return Result.error(Exception());
     }
   }
 
   @override
-  Result<User> getCurrentUser() {
-    final currentUser = _authService.currentUser;
-    return currentUser != null
-        ? Result.ok(currentUser)
-        : Result.error(Exception('Current user not found.'));
+  Future<Result<bool>> signOut() async {
+    try {
+      await _authService.signOut();
+      return Result.ok(true);
+    } on FirebaseAuthException catch (e) {
+      _log.warning(e.message);
+      return Result.error(e);
+    } on Exception catch (e) {
+      _log.warning(e.toString());
+      return Result.error(e);
+    }
   }
+
+  @override
+  User? getCurrentUser() => _authService.currentUser;
 }

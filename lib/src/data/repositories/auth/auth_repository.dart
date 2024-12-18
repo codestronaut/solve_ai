@@ -5,5 +5,6 @@ import '../../../shared/utils/result.dart';
 abstract class AuthRepository {
   Future<Result<UserCredential>> signInWithApple();
   Future<Result<UserCredential>> signInWithGoogle();
-  Result<User> getCurrentUser();
+  Future<Result<bool>> signOut();
+  User? getCurrentUser();
 }

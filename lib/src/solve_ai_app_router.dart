@@ -9,6 +9,7 @@ import 'features/home/pages/home_scan_page.dart';
 import 'features/home/pages/home_tools_page.dart';
 import 'features/permission/managers/permission_bloc.dart';
 import 'features/permission/pages/permission_page.dart';
+import 'features/profile/pages/profile_page.dart';
 import 'solve_ai_di.dart';
 
 part 'solve_ai_app_router.gr.dart';
@@ -22,14 +23,14 @@ class SolveAIAppRouter extends RootStackRouter {
 
   @override
   List<AutoRoute> get routes {
-    final guards = [AuthGuard(permissionBloc: _permissionBloc)];
-
     return [
-      AutoRoute(path: '/', page: OnboardingRoute.page, guards: guards),
+      AutoRoute(path: '/onboarding', page: OnboardingRoute.page),
       AutoRoute(path: '/permission', page: PermissionRoute.page),
+      AutoRoute(path: '/profile', page: ProfileRoute.page),
       AutoRoute(
-        path: '/home',
+        path: '/',
         page: HomeRoute.page,
+        guards: [AuthGuard(permissionBloc: _permissionBloc)],
         children: [
           AutoRoute(path: 'scan', page: HomeScanRoute.page),
           AutoRoute(path: 'tools', page: HomeToolsRoute.page),
@@ -47,17 +48,17 @@ class AuthGuard extends AutoRouteGuard {
   final PermissionBloc permissionBloc;
 
   @override
-  void onNavigation(NavigationResolver resolver, StackRouter router) {
+  void onNavigation(NavigationResolver resolver, StackRouter router) async {
     permissionBloc.stream.listen((permissionState) {
       locator<FirebaseAuth>().authStateChanges().listen((currentUser) {
         if (currentUser != null) {
           if (permissionState.isAllGranted && permissionState.isComplete) {
-            resolver.redirect(const HomeRoute(), replace: true);
+            resolver.next();
           } else {
             resolver.redirect(const PermissionRoute(), replace: true);
           }
         } else {
-          resolver.next();
+          resolver.redirect(const OnboardingRoute(), replace: true);
         }
       });
     });

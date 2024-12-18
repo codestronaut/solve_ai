@@ -9,6 +9,7 @@ import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/extensions/ext_dimens.dart';
 import '../../../shared/extensions/ext_misc.dart';
 import '../../../shared/extensions/ext_theme.dart';
+import '../../../solve_ai_app_router.dart';
 import '../widgets/tools/tools_menu_group.dart';
 import '../widgets/tools/tools_menu_tile.dart';
 
@@ -98,7 +99,7 @@ class HomeToolsPage extends StatelessWidget {
                     ?.copyWith(fontWeight: FontWeight.w700),
                 actions: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => context.pushRoute(const ProfileRoute()),
                     icon: Assets.icons.icSettings.svg(
                       colorFilter: ColorFilter.mode(
                         CupertinoColors.label.resolveFrom(context),

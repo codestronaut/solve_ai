@@ -1,15 +1,12 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:logging/logging.dart';
 
 import '../../../shared/assets/assets.gen.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/extensions/ext_misc.dart';
 import '../../../solve_ai_app_router.dart';
-import '../../../solve_ai_di.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -20,17 +17,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    getCurrentUser();
-    super.initState();
-  }
-
-  Future<void> getCurrentUser() async {
-    final user = locator<FirebaseAuth>().currentUser;
-    Logger('HomePage').info(user.toString());
-  }
-
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
