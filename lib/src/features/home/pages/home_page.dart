@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../shared/assets/assets.gen.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/extensions/ext_misc.dart';
+import '../../../shared/extensions/ext_theme.dart';
 import '../../../solve_ai_app_router.dart';
 
 @RoutePage()
@@ -20,6 +23,48 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
+      extendBodyBehindAppBar: true,
+      appBarBuilder: (context, tabsRouter) {
+        return PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
+          child: ClipRect(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 14.0, sigmaY: 14.0),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: context.isLightMode
+                      ? ColorName.backgroundLight.withValues(alpha: 0.4)
+                      : ColorName.backgroundDark.withValues(alpha: 0.4),
+                ),
+                child: AppBar(
+                  title: Text(
+                    switch (tabsRouter.activeIndex) {
+                      0 => context.l10n.navScan,
+                      1 => context.l10n.navTools,
+                      2 => context.l10n.navChat,
+                      3 => context.l10n.navHistory,
+                      _ => context.l10n.appName,
+                    },
+                  ),
+                  titleTextStyle: context.textTheme.headlineMedium.ny
+                      ?.copyWith(fontWeight: FontWeight.w700),
+                  actions: [
+                    IconButton(
+                      onPressed: () => context.pushRoute(const ProfileRoute()),
+                      icon: Assets.icons.icSettings.svg(
+                        colorFilter: ColorFilter.mode(
+                          CupertinoColors.label.resolveFrom(context),
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
       routes: const [
         HomeScanRoute(),
         HomeToolsRoute(),

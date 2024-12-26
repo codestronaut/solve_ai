@@ -1,15 +1,9 @@
-import 'dart:ui';
-
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../shared/assets/assets.gen.dart';
-import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/extensions/ext_dimens.dart';
 import '../../../shared/extensions/ext_misc.dart';
-import '../../../shared/extensions/ext_theme.dart';
-import '../../../solve_ai_app_router.dart';
 import '../widgets/tools/tools_menu_group.dart';
 import '../widgets/tools/tools_menu_tile.dart';
 
@@ -81,45 +75,13 @@ class HomeToolsPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: ClipRect(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 14.0, sigmaY: 14.0),
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: context.isLightMode
-                    ? ColorName.backgroundLight.withOpacity(0.4)
-                    : ColorName.backgroundDark.withOpacity(0.4),
-              ),
-              child: AppBar(
-                title: Text(context.l10n.navTools),
-                titleTextStyle: context.textTheme.headlineMedium.ny
-                    ?.copyWith(fontWeight: FontWeight.w700),
-                actions: [
-                  IconButton(
-                    onPressed: () => context.pushRoute(const ProfileRoute()),
-                    icon: Assets.icons.icSettings.svg(
-                      colorFilter: ColorFilter.mode(
-                        CupertinoColors.label.resolveFrom(context),
-                        BlendMode.srcIn,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
       body: ListView.separated(
         shrinkWrap: true,
         itemCount: menuGroups.length,
         itemBuilder: (context, index) => menuGroups[index],
         separatorBuilder: (context, index) => context.spacingMd.vSpace,
         padding: EdgeInsets.all(context.spacingMd).copyWith(
-          top: context.appBarHeight + context.spacingMd,
+          top: context.statusBarHeight + context.spacingMd,
         ),
       ),
     );
