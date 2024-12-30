@@ -1,12 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 
 import 'features/auth/pages/onboarding_page.dart';
+import 'features/chat/pages/chat_page.dart';
 import 'features/home/pages/home_chat_page.dart';
 import 'features/home/pages/home_history_page.dart';
 import 'features/home/pages/home_page.dart';
 import 'features/home/pages/home_scan_page.dart';
 import 'features/home/pages/home_tools_page.dart';
+import 'features/home/widgets/tools/tools_menu.dart';
 import 'features/permission/managers/permission_bloc.dart';
 import 'features/permission/pages/permission_page.dart';
 import 'features/profile/pages/profile_page.dart';
@@ -26,7 +29,6 @@ class SolveAIAppRouter extends RootStackRouter {
     return [
       AutoRoute(path: '/onboarding', page: OnboardingRoute.page),
       AutoRoute(path: '/permission', page: PermissionRoute.page),
-      AutoRoute(path: '/profile', page: ProfileRoute.page),
       AutoRoute(
         path: '/',
         page: HomeRoute.page,
@@ -39,6 +41,8 @@ class SolveAIAppRouter extends RootStackRouter {
           RedirectRoute(path: '*', redirectTo: 'scan'),
         ],
       ),
+      AutoRoute(path: '/chat', page: ChatRoute.page, fullscreenDialog: true),
+      AutoRoute(path: '/profile', page: ProfileRoute.page),
     ];
   }
 }

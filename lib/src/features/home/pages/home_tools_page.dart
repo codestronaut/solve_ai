@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../shared/assets/assets.gen.dart';
 import '../../../shared/extensions/ext_dimens.dart';
 import '../../../shared/extensions/ext_misc.dart';
+import '../../../solve_ai_app_router.dart';
+import '../widgets/tools/tools_menu.dart';
 import '../widgets/tools/tools_menu_group.dart';
 import '../widgets/tools/tools_menu_tile.dart';
 
@@ -13,72 +14,36 @@ class HomeToolsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final menuGroups = [
-      ToolsMenuGroup(
-        title: context.l10n.askAiTitle,
-        subtitle: context.l10n.askAiSubtitle,
-        menuTiles: [
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatAskAnything.path,
-            title: context.l10n.askAiAnything,
-          ),
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatSummarize.path,
-            title: context.l10n.askAiSummarize,
-          ),
-        ],
+    final toolsMenuGroupsList = List.generate(
+      toolsMenuGroups.length,
+      (index) => ToolsMenuGroup(
+        title: switch (index) {
+          0 => context.l10n.askAiTitle,
+          1 => context.l10n.writeTitle,
+          _ => context.l10n.languageTitle,
+        },
+        subtitle: switch (index) {
+          0 => context.l10n.askAiSubtitle,
+          1 => context.l10n.writeSubtitle,
+          _ => context.l10n.languageSubtitle,
+        },
+        menuTiles: toolsMenuGroups[index].map(
+          (toolsMenu) {
+            return ToolsMenuTile(
+              onTap: () => context.pushRoute(ChatRoute(toolsMenu: toolsMenu)),
+              iconPath: toolsMenu.getIconPath(),
+              title: toolsMenu.getLabel(context),
+            );
+          },
+        ).toList(),
       ),
-      ToolsMenuGroup(
-        title: context.l10n.writeTitle,
-        subtitle: context.l10n.writeSubtitle,
-        menuTiles: [
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatDraftEssay.path,
-            title: context.l10n.writeDraftEssay,
-          ),
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatImprove.path,
-            title: context.l10n.writeImprove,
-          ),
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatChangeTone.path,
-            title: context.l10n.writeChangeTone,
-          ),
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatParaphrase.path,
-            title: context.l10n.writeParaphrase,
-          ),
-        ],
-      ),
-      ToolsMenuGroup(
-        title: context.l10n.languageTitle,
-        subtitle: context.l10n.languageSubtitle,
-        menuTiles: [
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatTranslate.path,
-            title: context.l10n.languageTranslate,
-          ),
-          ToolsMenuTile(
-            onTap: () {},
-            iconPath: Assets.icons.icFeatFixGrammar.path,
-            title: context.l10n.languageFixGrammar,
-          ),
-        ],
-      ),
-    ];
+    );
 
     return Scaffold(
       body: ListView.separated(
         shrinkWrap: true,
-        itemCount: menuGroups.length,
-        itemBuilder: (context, index) => menuGroups[index],
+        itemCount: toolsMenuGroupsList.length,
+        itemBuilder: (context, index) => toolsMenuGroupsList[index],
         separatorBuilder: (context, index) => context.spacingMd.vSpace,
         padding: EdgeInsets.all(context.spacingMd).copyWith(
           top: context.statusBarHeight + context.spacingMd,
